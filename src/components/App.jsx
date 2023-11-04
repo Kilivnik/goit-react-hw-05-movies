@@ -4,6 +4,9 @@ import styles from './App.module.css';
 
 const Home = lazy(() => import('../components/Home/Home'));
 const Movies = lazy(() => import('../components/Movies/Movies'));
+const MovieDetails = lazy(() =>
+  import('../components/MovieDetails/MovieDetails')
+);
 
 export const App = () => {
   return (
@@ -30,6 +33,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="movies" element={<Movies />} />
+          <Route path="movies/:movieId" element={<MovieDetails />} />
         </Routes>
       </Suspense>
     </>
