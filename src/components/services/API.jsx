@@ -9,7 +9,7 @@ export async function fetchTrendingMovies() {
 
 export async function fetchSearchMovie(search, page) {
   const response = await axios.get(
-    `/search/movie?${API_KEY}&query=${search}&page=${page}`
+    `/search/movie?api_key=${API_KEY}&query=${search}&page=${page}`
   );
   return response.data;
 }
@@ -20,11 +20,15 @@ export async function fetchMovieDetails(movieId) {
 }
 
 export async function fetchMovieCredits(movieId) {
-  const response = await axios.get(`/movie/${movieId}/credits?${API_KEY}`);
+  const response = await axios.get(
+    `/movie/${movieId}/credits?api_key=${API_KEY}`
+  );
   return response.data;
 }
 
 export async function fetchMovieReviews(movieId) {
-  const response = await axios.get(`/movie/${movieId}/reviews?${API_KEY}`);
+  const response = await axios.get(
+    `/movie/${movieId}/reviews?api_key=${API_KEY}`
+  );
   return response.data;
 }
